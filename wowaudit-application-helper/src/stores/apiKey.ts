@@ -3,5 +3,6 @@ import { defineStore } from "pinia";
 
 export const useApiKeyStore = defineStore("apiKey", () => {
   const apiKey = ref("");
-  return { apiKey };
+  const isKeySet = ref(false);
+  return { apiKey, isKeySet };
 });
