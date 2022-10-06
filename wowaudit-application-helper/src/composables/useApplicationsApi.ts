@@ -43,7 +43,10 @@ export const getApplications = async (apiKey: string) => {
   });
 
   try {
-    const apps = await api<AppWrapper>("/api/v1/applications", tokenHeader);
+    const apps = await api<AppWrapper>(
+      "https://wowaudit.com/v1/applications",
+      tokenHeader
+    );
     return apps.applications;
   } catch (error) {
     console.log("error getting applications: " + error);
@@ -56,7 +59,7 @@ export const deleteApplication = async (apiKey: string, appId: number) => {
   });
 
   try {
-    await fetch("/api/v1/applications/" + appId, {
+    await fetch("https://wowaudit.com/v1/applications/" + appId, {
       method: "DELETE",
       headers: tokenHeader,
       mode: "cors",
