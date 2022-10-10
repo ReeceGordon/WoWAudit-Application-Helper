@@ -24,6 +24,8 @@ interface AppWrapper {
   applications: Application[];
 }
 
+const proxyServer: string = "https://safe-everglades-42447.herokuapp.com/";
+
 async function api<T>(url: string, header: Headers): Promise<T> {
   return fetch(url, {
     method: "GET",
@@ -44,7 +46,7 @@ export const getApplications = async (apiKey: string) => {
 
   try {
     const apps = await api<AppWrapper>(
-      "https://wowaudit.com/v1/applications",
+      proxyServer + "https://wowaudit.com/v1/applications",
       tokenHeader
     );
     return apps.applications;
@@ -59,7 +61,7 @@ export const deleteApplication = async (apiKey: string, appId: number) => {
   });
 
   try {
-    await fetch("https://wowaudit.com/v1/applications/" + appId, {
+    await fetch(proxyServer + "https://wowaudit.com/v1/applications/" + appId, {
       method: "DELETE",
       headers: tokenHeader,
       mode: "cors",
