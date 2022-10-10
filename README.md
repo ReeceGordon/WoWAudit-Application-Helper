@@ -10,4 +10,4 @@ Copy your api key from https://wowaudit.com/eu/*REALM-NAME*/*GUILD-NAME*/*TEAM-N
 
 Replace *REALM-NAME* *GUILD-NAME* *TEAM-NAME* with your respective wow audit names.
 
-Live: https://wowaudit-application-helper.netlify.app/
+Live: https://wowaudit-application-helper.netlify.app/ - note that WoWAudit as of writing this isn't setup for CORS so you'll need to use this locally with the setup proxy or setup your own proxy server for use here.
